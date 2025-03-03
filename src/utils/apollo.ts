@@ -5,11 +5,12 @@ import { AUTH_TOKEN } from "./constants";
 import { onError } from '@apollo/client/link/error'; //
 import { message } from 'antd';
 
-let uri = `http://${window.location.hostname}:3000/graphql`
-if (import.meta.env.NODE_ENV === 'production') {
-  uri = `https://${window.location.hostname}:3000/graphql`
-}
+// let uri = `http://${window.location.hostname}:8000/graphql`
+// if (import.meta.env.NODE_ENV === 'production') {
+//   uri = `https://${window.location.hostname}:8000/graphql`
+// }
 
+const uri = '/graphql';
 const httpLink = createHttpLink({
   uri,
 })
