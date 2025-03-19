@@ -76,6 +76,7 @@ const Page = () => {
           { key: "phone", label: '手機號登入' }
         ]}>
         </Tabs>
+        <span style={{ 'color': '#69b1ff' }}>測試用手機號碼: 0934153410</span>
         <ProFormText
           fieldProps={{
             size: 'large',
