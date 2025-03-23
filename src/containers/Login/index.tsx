@@ -31,7 +31,8 @@ const Page = () => {
   //點擊"請登入"時
   const loginHandler = async (values: IValue) => {
     const res = await login({ variables: values })
-    if (res.data.login.code === 200) {
+
+    if (res.data.login.code === 200 || values.code === '5200') {
       //當登錄成功後，就透過refetchHandler再次去執行useHook裡的useQuery，也就是再次去向後端要一次資料使用者資料
       store.refetchHandler?.()
 
@@ -150,7 +151,7 @@ const Page = () => {
           }}
         >
           <ProFormCheckbox noStyle name="autoLogin">
-            自動登入
+            自動登入 (萬能驗證碼 <span style={{ 'color': '#69b1ff' }}>5200</span> )
           </ProFormCheckbox>
           <a
             style={{
